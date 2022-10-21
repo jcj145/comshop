@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- boardMapper.xml -->
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.home.webshop.dao.AdminDAO">
+
+
+	
+	<select id="userList" resultType="com.home.webshop.vo.MemberVO">
+		SELECT * FROM member
+	</select>
+	
+	<select id="categoryList" resultType="com.home.webshop.vo.CategoryVO">
+		SELECT * FROM category
+	</select>
+	
+	<select id="goodsList" resultType="com.home.webshop.vo.ItemVO">
+		SELECT * FROM item
+	</select>
+	
+	<select id="itemdetail" resultType="com.home.webshop.vo.ItemVO">
+		SELECT * FROM item WHERE num = ${num}
+	</select>
+	
+	<insert id="register" parameterType="com.home.webshop.vo.ItemVO">		
+		INSERT INTO item(name, cateCode, price, stock, memo, image, thumbimg) 
+		VALUES(#{name},#{cateCode},#{price},#{stock},#{memo}, #{image}, #{thumbimg})
+	</insert>
+	
+	<select id="catelist" resultType="com.home.webshop.vo.ItemVO">
+		SELECT * FROM item INNER JOIN category ON item.cateCode = category.cateCode WHERE item.cateCode = #{cateCode}
+	</select>
+	
+	<update id="updateitem">
+		UPDATE item SET name = #{name}, cateCode = #{cateCode}, price = #{price}, stock = #{stock}, memo = #{memo}, image = #{image}, thumbimg = #{thumbimg} WHERE num = #{num}
+	</update>
+	
+	<delete id="deleteitem">
+		DELETE from item WHERE num = #{num}
+	</delete>	
+	
+	<delete id="deleteuser">
+		DELETE from member WHERE id = #{id}
+	</delete>	
+
+
+</mapper>

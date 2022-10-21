@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- boardMapper.xml -->
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.home.webshop.dao.BoardDAO">
+
+	<insert id="write" parameterType="com.home.webshop.vo.BoardVO">		
+		INSERT INTO board(title, writer, content) 
+		VALUES(#{title},#{writer},#{content})
+	</insert>
+	
+	<insert id="createReply" parameterType="com.home.webshop.vo.ReplyVO">		
+		INSERT INTO reply(rcontent, rwriter, bno) 
+		VALUES(#{rcontent},#{rwriter},#{bno})
+	</insert>
+	
+	<select id="boardCount" resultType="int">
+		SELECT count(*) FROM board
+	</select>
+	
+	<select id="replylist" resultType="com.home.webshop.vo.ReplyVO">
+		SELECT * FROM reply WHERE bno = #{bno}
+	</select>
+	
+	<select id="boardCriteria" resultType="com.home.webshop.vo.BoardVO">
+		SELECT * FROM board ORDER BY bno ASC limit #{startRow}, #{perPageNum}
+	</select>
+	
+	<select id="detail" resultType="com.home.webshop.vo.BoardVO">
+		SELECT * FROM board WHERE bno = #{bno}
+	</select>
+	
+	<delete id="deleteBoard" parameterType="int">
+		DELETE FROM board WHERE bno = #{bno}  
+	</delete>
+	
+	<update id="updateBoard">
+		UPDATE board SET title = #{title}, content = #{content} WHERE bno = #{bno}
+	</update>
+	
+	<delete id="deleteReply" parameterType="int">
+		DELETE FROM reply WHERE rno = #{rno}  
+	</delete>
+</mapper>

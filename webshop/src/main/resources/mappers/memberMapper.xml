@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- boardMapper.xml -->
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.home.webshop.dao.MemberDAO">
+
+	<insert id="join" parameterType="com.home.webshop.vo.MemberVO">		
+		INSERT INTO member(id, pw, name, phon, addr, email) 
+		VALUES(#{id},#{pw},#{name},#{phon},#{addr},#{email})
+	</insert>
+	
+	<select id="idCheck" parameterType="String" resultType="int">
+		SELECT COUNT(id) FROM member WHERE id = #{id}
+	</select>
+	
+	<select id="login"  resultType="com.home.webshop.vo.MemberVO">
+		SELECT * FROM member WHERE id = #{id}
+	</select>
+	
+		<select id="memberCriteria" resultType="com.home.webshop.vo.MemberVO">
+		SELECT * FROM member ORDER BY regdate ASC limit #{startRow}, #{perPageNum}
+	</select>
+	
+		<select id="memberList" resultType="com.home.webshop.vo.MemberVO">
+		SELECT * FROM member
+	</select>
+	
+	<select id="memberCount" resultType="int">
+		SELECT count(*) FROM member
+	</select>
+	
+	<delete id="deletecart" parameterType="List">
+		DELETE from cart WHERE cartnum in     
+			<foreach collection="list" item="cartnum" index="i" open="(" separator="," close=")">
+	      		#{cartnum}
+	    	</foreach>
+	</delete>	
+
+</mapper>

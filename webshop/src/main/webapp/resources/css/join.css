@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css?family=Karla);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300);
+
+.wrap{
+  padding:145px 0;
+  font-size:20px;
+  color:#888;
+  width:400px;
+  font-family:'Karla';
+  margin:0 auto;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+input{
+  font-family:'Ubuntu';
+  font-weight:100;
+  border:0;
+  width:100%;
+  height:36px;
+  font-size:20px;
+
+}
+
+input:focus{
+  outline:none;
+  box-shadow:none;
+  background:#ffeae2;
+}
+
+button{
+  border:0;
+  background:transparent;
+  padding:0px;
+  margin-top:30px;
+  position:relative;
+  outline:0;
+}
+
+.buttonafter:after{
+content:'';
+display:block;
+position:absolute;
+top:8px;
+left:100%; /*should be set to 100% */
+width:0;
+height:0;
+border-color: transparent transparent transparent #14a03d; /*border color should be same as div div background color*/
+border-style: solid;
+border-width: 5px;
+
+}
+
+.forgot{
+	margin-top:30px;
+  background:#a0a0a0;
+  color:#fff;
+  float:left;
+}
+
+.login{
+	margin-top:30px;
+  background:#a0a0a0;
+  color:#fff;
+  float:right;
+}
+
+.login.buttonafter {
+    background:#14a03d;
+}
+
+/* .back{
+	display:none;
+} */
+
+.certify{
+	display:none;
+}
+
+label{
+	position:absolute;
+	right:400px;
+}
+.idcheck{
+	display:none;
+	color:#ff0000;
+}
+.pwcheck{
+	display:none;
+	color:#ff0000;
+}
+.b{
+	display:none;
+	color:#ff0000;
+}
+
