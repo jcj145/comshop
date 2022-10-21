@@ -144,7 +144,25 @@ DB에 암호화 되어 저장
 		return true;
 	}
 ```   
-* 상품 등록
+* 상품 등록   
+Thumbnailator 와 Commons-Fileupload상품 이미지 등록   
+```c
+	<!-- 업로드 패스 설정 --> 
+	<beans:bean class="java.lang.String" id="uploadPath">
+	 <beans:constructor-arg value="C:\coding\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\webshop\resources" />
+	</beans:bean>
+	
+	<!-- 일반 파일 업로드 경로 -->
+	<resources mapping="/img/**" location="/resources/img/" />
+	
+	<!-- 파일 크기 제한 -->
+	<beans:bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+	 <beans:property name="maxUploadSize" value="10485760"/>
+	</beans:bean>
+```   
+```c
+
+```
 
 
 
