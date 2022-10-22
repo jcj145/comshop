@@ -509,9 +509,9 @@ Mapper - 체크가 여러개 됬을시 한번에 처리하기 위해 동적쿼�
 	    	</foreach>
 	</delete>	
 ```   
-* 관리자 상품 등록 페이지 
+* 관리자 상품 등록 페이지    
 ![image](https://user-images.githubusercontent.com/66048544/197314994-ed6f7d71-aa3f-451a-aeff-182d02d5b5b6.png)
-* 관리자 상품 목록 및 상품 수정 페이지
+* 관리자 상품 목록 및 상품 수정 페이지   
 ![image](https://user-images.githubusercontent.com/66048544/197315084-2f7e7f55-2d3d-45a8-ac2f-8041f81aec1b.png)
 ![image](https://user-images.githubusercontent.com/66048544/197315097-9384d938-cfd2-43ff-b9c0-67e5cc2fb663.png)   
 상품수정   
