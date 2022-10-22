@@ -536,9 +536,7 @@ Mapper - 체크가 여러개 됬을시 한번에 처리하기 위해 동적쿼�
 	}
 ```   
 * 유저 관리 페이지
-```c
-![image](https://user-images.githubusercontent.com/66048544/197315230-4e793b30-76a5-4734-95fa-e8e810fd3002.png)
-```   
+![image](https://user-images.githubusercontent.com/66048544/197315230-4e793b30-76a5-4734-95fa-e8e810fd3002.png)  
 * 회원탈퇴
 ```c
 			function deleteUser() {
